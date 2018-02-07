@@ -1,0 +1,11 @@
+commit 6cbd5bb1f26f6fdcef4435b4eb9392407ae6be7d (HEAD -> master)
+Author: Darya Bondareva <darya.bondareva17@gmail.com>
+Date:   Wed Feb 7 22:25:33 2018 +0300
+
+    add status.txt
+
+commit 627c5c0ff9ec738f873b9708da58d1e986858c66
+Author: Darya Bondareva <darya.bondareva17@gmail.com>
+Date:   Tue Feb 6 11:01:44 2018 +0300
+
+    add .gitignore
