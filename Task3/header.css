@@ -1,0 +1,30 @@
+header{
+    background-color: #6495ED;
+    border: 1px solid black;
+}
+img.logo{
+    height: 8%;
+    width: 8%;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between ;
+    font-size: 2.5vw;
+    align-items: center;
+}
+.flex-container.icons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end ;
+    align-items: center;
+}
+header.fa{
+    size: 3vw;
+    position: relative;
+    top: 5px;
+    left: 500px;
+}
+span{
+    font-size: 1.5vw;
+}
