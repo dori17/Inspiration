@@ -17,11 +17,11 @@
             <img class="logo" src="logo.png" alt="logo">
             <div class="icons-container">
                 <i class="fa fa-camera-retro"></i> &ensp;
-                <i class="fa fa-sign-out"><span>Vasiliu Pupkin</i>
+                <i class="fa fa-sign-out"><span>Vasiliu Pupkin</span></i>
             </div>
         </div>
     </header>
-    <div class="center-field">
+    <div class="container-outer">
         <div class="filters">
             <b>Filters</b>
             <ul style="list-style-type:none">
@@ -31,80 +31,85 @@
                 <input type="text" name="fname" placeholder="DD.MM.YYYY."><br>
                 <li>Hashtags</li>
                 <input type="text" name="fname" placeholder="#seal#blue#html"><br>
+                <button type="submit">Filter!</button>
             </ul>
         </div>
-            <div class="post-with-icons">
-                <div class="post">
-                    <img class="seal" src="https://cdn.discover-the-world.co.uk/images/blog/antarctica/antarctica-adelie-penguins-ice-hopping-istock.jpg" alt="user photo" height="60%" width="60%">
-                    <div class="post-text">
-                        <p> Буду писать на русском потому что бесит уже всё, ррр. Тут всё капец косо и криво, но у меня уже крыша едет. Вопрос номер а) можно ли рассчитывать на то, что все
-                        фоточки будут одинаковых размеров, а ни как здесь? б) можно ли как-то адекватно закрепить фильтры слева, чтобы они там всегда были и при скролле с нами ездили?
-                        Или единственный и неповторимый способ это сделать - это position: fixed?</p>
-                        <p>#hashtags #hashtags #hashtags #hashtags #hashtags #hashtags</p>
+        <div class="container-inner">
+            <div class="center-field">
+                <div class="post-with-icons">
+                    <div class="post">
+                        <img class="seal" src="https://cdn.discover-the-world.co.uk/images/blog/antarctica/antarctica-adelie-penguins-ice-hopping-istock.jpg" alt="user photo" height="50%" width="50%">
+                        <div class="post-text">
+                            <p> Сделала position: fixed для фильтров. Удалила немножно лишних стилей, которые не применялись.
+                                Добавила кнопку "Filter", поменяла type кнопок с "button" на "submit". Я не понимаю, почему содержимое не слушается и вылазит за границу вправо.  </p>
+                            <p>#hashtags #hashtags #hashtags #hashtags #hashtags #hashtags</p>
+                        </div>
+                    </div>
+                    <span>Username 02:21 Feb. 28, 2018</span>
+                    <button type="submit">Like it!</button>
+                    <div class="icons">
+                        <i class="fa fa-edit">Edit &ensp;</i>
+                        <i class="fa fa-times-circle">Delete</i>
                     </div>
                 </div>
-                <span>Username 02:21 Feb. 28, 2018</span>
-                <button type="button">Like it!</button>
-                <div class="icons">
-                    <i class="fa fa-edit">Edit &ensp;</i>
-                    <i class="fa fa-times-circle">Delete</i>
-                </div>
-            </div>
-            <div class="post-with-icons">
-                <div class="post">
-                    <img class="seal" src="http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg" alt="user photo" height="60%" width="60%">
-                    <div class="post-text">
-                        <p>в) в контенте есть класс post и в content.css для него даже определены стили, но такое ощущение, что браузер их игнорит. Как с ним бороться? Или это всё
-                        потому, что размеры какие-то странные? Вот это, кстати, тоже очень напрягает. Меняется количество написанного тут - и уже меняется вид картинки и вообще
-                        области в целом. Так явно не должно быть... </p>
-                        <p>#hashtags #hashtags #hashtags #hashtags #hashtags #hashtags</p>
+                <div class="post-with-icons">
+                    <div class="post">
+                        <img class="seal" src="http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg" alt="user photo" height="50%" width="50%">
+                        <div class="post-text">
+                            <p>Space-around: items are evenly distributed in the line with equal space around
+                                them. Note that visually the spaces aren't equal, since all the items have equal space on both sides.
+                            <p>#hashtags #hashtags #hashtags #hashtags #hashtags #hashtags</p>
+                        </div>
+                    </div>
+                    <span>Username 02:21 Feb. 28, 2018</span>
+                    <button type="submit">Like it!</button>
+                    <div class="icons">
+                        <i class="fa fa-edit">Edit &ensp;</i>
+                        <i class="fa fa-times-circle">Delete</i>
                     </div>
                 </div>
-                <span>Username 02:21 Feb. 28, 2018</span>
-                <button type="button">Like it!</button>
-                <div class="icons">
-                    <i class="fa fa-edit">Edit &ensp;</i>
-                    <i class="fa fa-times-circle">Delete</i>
+            </div>
+            <div class="center-field">
+                <div class="post-with-icons">
+                    <div class="post">
+                        <img class="seal" src="https://cdn.discover-the-world.co.uk/images/blog/antarctica/antarctica-adelie-penguins-ice-hopping-istock.jpg" alt="user photo" height="60%" width="60%">
+                        <div class="post-text">
+                            <p>The first item will have one unit of space against the container edge, but two units of space
+                                between the next item because that next item has its own spacing that applies.  </p>
+                            </p>
+                            <p>#hashtags #hashtags #hashtags #hashtags #hashtags #hashtags</p>
+                        </div>
+                    </div>
+                    <span>Username 02:21 Feb. 28, 2018</span>
+                    <button type="submit">Like it!</button>
+                    <div class="icons">
+                        <i class="fa fa-edit">Edit &ensp;</i>
+                        <i class="fa fa-times-circle">Delete</i>
+                    </div>
+                </div>
+                <div class="post-with-icons">
+                    <div class="post">
+                        <img class="seal" src="http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg" alt="user photo" height="40%" width="40%">
+                        <div class="post-text">
+                            <p> The width attribute specifies the width of an image, in pixels. Tip: Always specify both the height and width
+                                attributes for images. If  Да, это песец!! Потому что ну ёмаё height and width are set, the space required for the image is reserved when the page
+                                is loaded.</p>
+                            <p>#hashtags #hashtags #hashtags #hashtags #hashtags #hashtags</p>
+                        </div>
+                    </div>
+                    <span>Username 02:21 Feb. 28, 2018</span>
+                    <button type="submit">Like it!</button>
+                    <div class="icons">
+                        <i class="fa fa-edit">Edit &ensp;</i>
+                        <i class="fa fa-times-circle">Delete</i>
+                    </div>
                 </div>
             </div>
+        </div>
+
     </div>
-    <div class="center-field">
-            <div class="post-with-icons">
-                <div class="post">
-                    <img class="seal" src="https://cdn.discover-the-world.co.uk/images/blog/antarctica/antarctica-adelie-penguins-ice-hopping-istock.jpg" alt="user photo" height="60%" width="60%">
-                    <div class="post-text">
-                        <p>А ещё посмотрите на эти прекрасные input-области, когда меняется размер экрана. Как сделать так, чтобы они тоже как-нибудь адаптировались? А то всё остальное
-                            подстраивается, а эти штуки всё портят. Или их нельзя никак подстроить? P.S. позиционирование слов и иконок под фоткой - это просто взрыв моза (я так и не поняла
-                            , как это, блин, работает). А ещё на мом супер-сайте всё плывёт(((((((</p>
-                        <p>#hashtags #hashtags #hashtags #hashtags #hashtags #hashtags</p>
-                    </div>
-                </div>
-                <span>Username 02:21 Feb. 28, 2018</span>
-                <button type="button">Like it!</button>
-                <div class="icons">
-                    <i class="fa fa-edit">Edit &ensp;</i>
-                    <i class="fa fa-times-circle">Delete</i>
-                </div>
-            </div>
-            <div class="post-with-icons">
-                <div class="post">
-                    <img class="seal" src="http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg" alt="user photo" height="60%" width="60%">
-                    <div class="post-text">
-                        <p> *Тут просто какой-то текст потому что я и так вам уже явно надоела. Надоесть
-                            надоела, а посты не смотрятся, если текста мало*The width attribute specifies the width of an image, in pixels. Tip: Always specify both the height and width
-                            attributes for images. If  Да, это песец!! Потому что ну ёмаё height and width are set, the space required for the image is reserved when the page
-                            is loaded.</p>
-                        <p>#hashtags #hashtags #hashtags #hashtags #hashtags #hashtags</p>
-                    </div>
-                </div>
-                <span>Username 02:21 Feb. 28, 2018</span>
-                <button type="button">Like it!</button>
-                <div class="icons">
-                    <i class="fa fa-edit">Edit &ensp;</i>
-                    <i class="fa fa-times-circle">Delete</i>
-                </div>
-            </div>
-    </div>
+
+
     <footer>
         <img src="logo.png" alt="logo">
         <span> Created by Darya Bondareva &emsp;</span>
