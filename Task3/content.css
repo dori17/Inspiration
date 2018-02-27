@@ -7,13 +7,13 @@
 }
 .container-outer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
 }
 .container-inner{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 .center-field{
     display: flex;
@@ -21,11 +21,12 @@
     justify-content: space-around;
     align-items: center;
     position: relative;
-    left: 15%;
+    margin-left: 15%;
 }
 .center-field p{
     font-family: 'Slabo 27px', serif;
     font-size: 1vw;
+
 }
 .post-with-icons{
     float: left;
@@ -44,7 +45,7 @@
     flex-direction: column;
     word-wrap: break-word;
     border: 3px outset #6495ED;
-    width: 30%;
+    width: 13vw;
 }
 .post-with-icons .icons{
     display: flex;
@@ -55,10 +56,6 @@
 .post-with-icons button{
     background-color: #48D1CC;
     display: inline-block;
-    width: 6vw;
-    max-width: 6vw;
-    height: 2.5vw;
-    max-height: 2.5vw;
     font-family: 'Shadows Into Light', cursive;
     font-size: 1.5vw;
     border: 3px outset #48D1CC;
