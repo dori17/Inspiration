@@ -88,11 +88,19 @@ body{
     border-radius: 1vw;
 }
 #load-more{
-    background-color: #7b0001;
-    height: 2vw;
-    width: 2vw;
+    background-color: #ffc4b3;
+    height: 3vw;
+    width: 7vw;
+    text-align: center;
+    border: 3px outset #ffc4b3;
+    border-radius: 1vw;
+    margin-top: 2%;
+    margin-bottom: 2%;
     position: relative;
-    display: inline-block;
+    left: 90%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.3vw;
+    color: #7b0001;
 }
 .post-with-icons span{
     font-size: 1vw;
