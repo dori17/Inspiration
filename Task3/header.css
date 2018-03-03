@@ -1,25 +1,30 @@
 header{
     background-color: #ffac91;
-    border: 1px solid black;
+    border: 1px solid #950001;
+    border-radius: 3vw;
 }
 img.logo{
-    height: 8%;
-    width: 8%;
+    height: 15%;
+    width: 15%;
+    margin-left: 5%;
 }
 .flex-container{
     display: flex;
     flex-direction: row;
-    justify-content:space-between ;
+    justify-content:space-between;
     font-size: 2.5vw;
+    margin-right: 5%;
     align-items: center;
 }
 .flex-container.icons-container{
     display: flex;
     flex-direction: row;
-    justify-content:flex-end ;
+    justify-content: flex-start;
     align-items: center;
+    margin-right: 10%;
 }
 header.fa{
+    color: #950001;
     size: 3vw;
     position: relative;
     top: 5px;
