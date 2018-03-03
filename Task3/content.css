@@ -1,9 +1,22 @@
+body{
+    background: #ffe6cf;
+}
 .filters{
-    background-color: #6495ED;
+    background-color: #ffb593;
     border: 1px solid black;
+    width: 11%;
     font-size: 1.1vw;
     position: fixed;
-    margin-top: 2vw;
+    margin-top: 2%;
+}
+#input-author {
+    margin-left: 15%;
+}
+#input-date {
+    margin-left: 15%;
+}
+#input-hashtags {
+    margin-left: 15%;
 }
 .container-outer{
     display: flex;
@@ -14,6 +27,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-left: 15%;
+    /*background-color: #ffb593;*/
 }
 .center-field{
     display: flex;
@@ -21,12 +36,6 @@
     justify-content: space-around;
     align-items: center;
     position: relative;
-    margin-left: 15%;
-}
-.center-field p{
-    font-family: 'Slabo 27px', serif;
-    font-size: 1vw;
-
 }
 .post-with-icons{
     float: left;
@@ -44,8 +53,11 @@
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
-    border: 3px outset #6495ED;
+    border: 3px outset #ff957b;
     width: 13vw;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1vw;
+    background-color: #ffb593;
 }
 .post-with-icons .icons{
     display: flex;
@@ -54,11 +66,11 @@
     justify-content: center;
 }
 .post-with-icons button{
-    background-color: #48D1CC;
+    background-color: #ff7660;
     display: inline-block;
     font-family: 'Shadows Into Light', cursive;
     font-size: 1.5vw;
-    border: 3px outset #48D1CC;
+    border: 3px outset #ff9179;
 }
 .post-with-icons span{
     font-size: 1vw;
