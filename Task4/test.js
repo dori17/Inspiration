@@ -1,7 +1,22 @@
 console.log("all photoposts: ");
 console.log(workingWithPhotoposts.getPhotoPosts(0, 20));
-console.log("First 10 filtered by amount of likes: ");
-console.log(workingWithPhotoposts.getPhotoPosts(0, 10, workingWithPhotoposts.compareByLikes));
+
+console.log("Filter: Kate Zhukova");
+let filterObject = {
+    author: "Kate Zhukova"
+};
+console.log(workingWithPhotoposts.getPhotoPosts(0, 20, filterObject));
+console.log("Filter: Kate Zhukova, yes, Date(\"2018-03-03T06:45:34\"), ");
+filterObject.hashTags = "yes";
+filterObject.createdAt = new Date("2018-03-03T06:45:34");
+console.log(workingWithPhotoposts.getPhotoPosts(0, 20, filterObject));
+console.log("Filter: hashtag wisdom, first from 1st 5 posts");
+let filterHashtag = {
+    hashTags: "wisdom"
+};
+console.log(workingWithPhotoposts.getPhotoPosts(1, 5, filterHashtag));
+console.log("Filter:  wisdom, skip first 10, show 5 posts: (we have only 12 posts fitting this criteria)");
+console.log(workingWithPhotoposts.getPhotoPosts(10, 5, filterHashtag));
 
 console.log("Get 13th photopost: ");
 console.log(workingWithPhotoposts.getPhotoPost(13));
@@ -104,4 +119,5 @@ console.log(workingWithPhotoposts.getPhotoPost(8));
 console.log("And now we'll try to remove photopost with id 100500: ");
 console.log(workingWithPhotoposts.removePhotoPost(100500));
 console.log("That's it :) ");
+
 
