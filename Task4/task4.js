@@ -14,7 +14,7 @@ const workingWithPhotoposts = (function() {
         {
             id: "2",
             description: "My parents are very creative and extraordinary people. Mom, dad, I love you.",
-            createdAt: new Date("2018-03-17T12:35:19"),
+            createdAt: new Date("2018-02-17T06:45:34"),
             author: "Ivan Ivanov",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
             hashTags: ["very", "combination", "name", "surname", "creativity", "test"],
@@ -42,7 +42,7 @@ const workingWithPhotoposts = (function() {
             id: "5",
             description: "No one can ruin your day without your permission. Remember that.",
             createdAt: new Date("2018-02-13T09:12:34"),
-            author: "Cute Panda",
+            author: "Kira Bondareva",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
             hashTags: ["motivation", "self-confidence", "wisdom"],
             likes: ["Vasya", "Artyom", "Petr"]
@@ -68,17 +68,17 @@ const workingWithPhotoposts = (function() {
         {
             id: "8",
             description: "Every day may not be good, but there is something good in every day.",
-            createdAt: new Date("2018-02-19T22:18:38"),
+            createdAt: new Date("2018-02-17T06:45:34"),
             author: "Natalie Paholenko",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
-            hashTags: ["wisdom"],
+            hashTags: ["wisdom", "creativity"],
             likes: ["Wonder", "Zayn", "Lauv", "Sia", "Alt-J"]
         },
         {
             id: "9",
             description: "Anyone who keeps the ability to see beauty never grows old.",
-            createdAt: new Date("2018-01-17T19:12:34"),
-            author: "Gigi Hadid",
+            createdAt: new Date("2018-03-03T19:12:34"),
+            author: "Kate Zhukova",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
             hashTags: ["beauty", "creativity", "models", "wisdom"],
             likes: ["Viktor"]
@@ -104,7 +104,7 @@ const workingWithPhotoposts = (function() {
         {
             id: "12",
             description: "Be with those who help your being.",
-            createdAt: new Date("2018-02-14T13:27:19"),
+            createdAt: new Date("2018-02-03T13:27:19"),
             author: "Kate Zhukova",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
             hashTags: ["psychology", "wisdom", "neighbourhood"],
@@ -122,7 +122,7 @@ const workingWithPhotoposts = (function() {
         {
             id: "14",
             description: "What we have once enjoyed we can never lose. All that we love deeply becomes a part of us.",
-            createdAt: new Date("2018-02-13T09:12:34"),
+            createdAt: new Date("2018-02-17T16:45:34"),
             author: "Helen",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
             hashTags: ["cute", "psychology"],
@@ -151,19 +151,19 @@ const workingWithPhotoposts = (function() {
             id: "17",
             description: "Don't be impressed by money, followers, degrees and titles. " +
             "Be impressed by kindness, integrity, humility and generosity",
-            createdAt: new Date("2018-01-13T14:11:27"),
+            createdAt: new Date("2018-02-17T06:45:34"),
             author: "Artyom Shishow",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
-            hashTags: ["wisdom", "qualities"],
+            hashTags: ["wisdom", "qualities", "creativity"],
             likes: ["Vasya", "Petya", "Kolya"]
         },
         {
             id: "18",
             description: "A smile is the pretties thing you can wear :)",
-            createdAt: new Date("2018-03-01T09:11:34"),
+            createdAt: new Date("2018-02-17T06:45:34"),
             author: "Kate Nepravskaya",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
-            hashTags: ["cute", "smile", "joy"],
+            hashTags: ["cute", "smile", "joy", "creativity"],
             likes: ["Vasya", "Petya", "Kolya"]
         },
         {
@@ -188,8 +188,7 @@ const workingWithPhotoposts = (function() {
     ];
 
     function getPhotoPosts(skip = 0, top = 10, filterConfig) {
-        let array = [];
-        let count = 0;
+        const array = [];
         photoPosts.sort(compareByDate);
         if (filterConfig === undefined) {
             for (let i = skip; i < top + skip; i++) {
@@ -197,96 +196,52 @@ const workingWithPhotoposts = (function() {
             }
             return array;
         }
-        else if (filterConfig.author === undefined && filterConfig.createdAt === undefined && filterConfig.hashTags === undefined) {
+        if(filterConfig.author !== undefined) {
             for (let i = 0; i < photoPosts.length; i++) {
-                count++;
-                if (count > skip)
+                if(photoPosts[i].author === filterConfig.author) {
                     array.push(photoPosts[i]);
-                if(array.length > top){ return array;}
-            }
-        }
-        else if (filterConfig.author === undefined && !(filterConfig.createdAt === undefined) && !(filterConfig.hashTags === undefined)) {
-            for (let i = 0; i < photoPosts.length; i++) {
-                if (photoPosts[i].createdAt.getFullYear() === filterConfig.createdAt.getFullYear() &&
-                    photoPosts[i].createdAt.getMonth() === filterConfig.createdAt.getMonth() &&
-                    photoPosts[i].createdAt.getDate() === filterConfig.createdAt.getDate() &&
-                    containsHashTag(i, filterConfig.hashTags)) {
-                    count++;
-                    if (count > skip)
-                        array.push(photoPosts[i]);
-                    if(array.length > top){ return array;}
                 }
             }
         }
-        else if (!(filterConfig.author === undefined) && filterConfig.createdAt === undefined && !(filterConfig.hashTags === undefined)) {
-            for (let i = 0; i < photoPosts.length; i++) {
-                if (photoPosts[i].author === filterConfig.author && containsHashTag(i, filterConfig.hashTags)) {
-                    count++;
-                    if (count > skip)
+        if(filterConfig.createdAt !== undefined) {
+                for (let i = 0; i < photoPosts.length; i++) {
+                    if (datesEqual(photoPosts[i], filterConfig)) {
                         array.push(photoPosts[i]);
-                    if(array.length > top) {return array;}
+                    }
+                }
+            }
+        if(filterConfig.hashTags !== undefined) {
+            for (let i = 0; i < photoPosts.length; i++) {
+                if (containsHashTag(photoPosts[i], filterConfig.hashTags)) {
+                    array.push(photoPosts[i]);
                 }
             }
         }
-        else if (!(filterConfig.author === undefined) && !(filterConfig.createdAt === undefined) && filterConfig.hashTags === undefined) {
-            for (let i = 0; i < photoPosts.length; i++) {
-                if (photoPosts[i].author === filterConfig.author && photoPosts[i].createdAt === filterConfig.createdAt) {
-                    count++;
-                    if (count > skip)
-                        array.push(photoPosts[i]);
-                    if(array.length > top) {return array;}
+        for (let i = 0; i < array.length; i++) {
+            if((filterConfig.author!== undefined && array[i].author !== filterConfig.author) ||
+                (filterConfig.createdAt!==undefined &&!datesEqual(array[i], filterConfig)) ||
+                (filterConfig.hashTags!== undefined && !containsHashTag(array[i], filterConfig.hashTags))){
+                array.splice(i, 1);
+                i--;
+            }
+        }
+        for(let i = 0; i < array.length; i++){
+            for(let j = i; j < array.length; j++){
+                if (i === j) continue;
+                if(array[i].id === array[j].id){
+                    array.splice(j, 1);
+                    j--;
                 }
             }
         }
-        else if (filterConfig.author === undefined && filterConfig.createdAt === undefined && !(filterConfig.hashTags === undefined)) {
-            for (let i = 0; i < photoPosts.length; i++) {
-                if (containsHashTag(i, filterConfig.hashTags)) {
-                    count++;
-                    if (count > skip)
-                        array.push(photoPosts[i]);
-                    if(array.length > top-1) {return array;}
-                }
-            }
+        if(skip !== 0) {
+            return array.slice(skip, skip + top)
         }
-        else if (filterConfig.author === undefined && !(filterConfig.createdAt === undefined) && filterConfig.hashTags === undefined) {
-            for (let i = 0; i < photoPosts.length; i++) {
-                if (photoPosts[i].createdAt === filterConfig.createdAt) {
-                    count++;
-                    if (count > skip)
-                        array.push(photoPosts[i]);
-                    if(array.length > top) {return array;}
-                }
-            }
-        }
-        else if (!(filterConfig.author === undefined) && filterConfig.createdAt === undefined && filterConfig.hashTags === undefined) {
-            for (let i = 0; i < photoPosts.length; i++) {
-                if (photoPosts[i].author === filterConfig.author) {
-                    count++;
-                    if (count > skip)
-                        array.push(photoPosts[i]);
-                    if(array.length > top) {return array;}
-                }
-            }
-        }
-        else if (!(filterConfig.author === undefined) && !(filterConfig.createdAt === undefined) && !(filterConfig.hashTags === undefined)) {
-            for (let i = 0; i < photoPosts.length; i++) {
-                if (photoPosts[i].author === filterConfig.author &&
-                    photoPosts[i].createdAt.getFullYear() === filterConfig.createdAt.getFullYear() &&
-                    photoPosts[i].createdAt.getMonth() === filterConfig.createdAt.getMonth() &&
-                    photoPosts[i].createdAt.getDate() === filterConfig.createdAt.getDate() &&
-                    containsHashTag(i, filterConfig.hashTags)) {
-                    count++;
-                    if (count > skip)
-                        array.push(photoPosts[i]);
-                    if(array.length > top) {return array;}
-                }
-            }
-        }
-            return array;
+        else return array.slice(0, top);
     }
 
     function getPhotoPost(idParam) {
-        for(let i=0; i<photoPosts.length; i++){
+        for(let i = 0; i < photoPosts.length; i++){
             if (!photoPosts[i].id.localeCompare(idParam))
                 return photoPosts[i];
         }
@@ -325,8 +280,7 @@ const workingWithPhotoposts = (function() {
            changes.id === undefined &&
            changes.createdAt === undefined &&
            changes.author === undefined
-           )
-        {
+           ) {
             if(!(changes.description === undefined)){
                 if(changes.description.length < 200){
                     getPhotoPost(idParam).description = changes.description;
@@ -353,7 +307,7 @@ const workingWithPhotoposts = (function() {
 
     function removePhotoPost(idParam) {
         if (idExists(idParam)){
-           let remIndex =  photoPosts.indexOf(getPhotoPost(idParam)); //можно ли сделать const remIndex?
+           const remIndex =  photoPosts.indexOf(getPhotoPost(idParam));
            photoPosts.splice(remIndex, 1);
            return true;
         }
@@ -367,55 +321,40 @@ const workingWithPhotoposts = (function() {
     }
 
     function idExists(someId){
-       for(let i=0; i<photoPosts.length; i++){
+       for(let i = 0; i < photoPosts.length; i++){
            if(!photoPosts[i].id.localeCompare(someId))
                return true;
        }
        return false;
     }
 
-    function compareByDate(a, b) {
+    function compareByDate(a, b){
         return a.createdAt.getTime() - b.createdAt.getTime();
     }
 
-    function compareByAuthor(a, b){
-        return a.author.toString().localeCompare(b.author);
-    }
-
-    function compareByHashTags(a, b){
-        if(a.hashTags.length < b.hashTags.length) return 1;
-        if(a.hashTags.length > b.hashTags.length) return -1;
-        else for(let i=0; i<a.hashTags.length; i++){
-            if(!(a.hashTags[i].toString().localeCompare(b.hashTags[i])===0))
-            {
-                return a.hashTags[i].toString().localeCompare(b.hashTags[i]);
-            }
-        }
-        return 0;
-    }
-
-    function compareByLikes(a, b){
-        return b.likes.length - a.likes.length;
-    }
-
-    function containsHashTag(index, hashTag)
-    {
-        for(let i = 0; i < photoPosts[index].hashTags.length; i++){
-            if (photoPosts[index].hashTags[i] === hashTag)
+    function containsHashTag(obj, hashTag) {
+        for(let i = 0; i < obj.hashTags.length; i++){
+            if (obj.hashTags[i] === hashTag)
                 return true;
         }
         return false;
     }
+
+    function datesEqual(obj1, obj2) {
+        if(obj1.createdAt.getFullYear() === obj2.createdAt.getFullYear() &&
+           obj1.createdAt.getMonth() === obj2.createdAt.getMonth() &&
+           obj1.createdAt.getDate() === obj2.createdAt.getDate()){
+             return true;
+        }
+        else return false;
+    }
+
     return {
         getPhotoPosts:getPhotoPosts,
         getPhotoPost: getPhotoPost,
         validatePhotoPost: validatePhotoPost,
         addPhotoPost: addPhotoPost,
         editPhotoPost: editPhotoPost,
-        removePhotoPost: removePhotoPost,
-        compareByDate: compareByDate,
-        compareByAuthor: compareByAuthor,
-        compareByHashTags: compareByHashTags,
-        compareByLikes: compareByLikes,
+        removePhotoPost: removePhotoPost
     }
 })();
