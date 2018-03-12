@@ -1,0 +1,20 @@
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    background-color: #ffac91;
+    border: 1px solid #950001;
+    border-radius: 3vw;
+    align-items: center;
+    position: relative;
+    color: #950001
+}
+footer span{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.2vw;
+    text-align: center;
+}
+footer img{
+    height: 10%;
+    width: 10%;
+}
