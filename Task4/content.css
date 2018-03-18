@@ -1,0 +1,108 @@
+body{
+    background: #ffe6cf;
+}
+.filters{
+    background-color: #ffb593;
+    border: 1px solid #950001;
+    border-radius: 1vw;
+    width: 11%;
+    font-style: italic;
+    color: #950001;
+    font-size: 1.1vw;
+    position: fixed;
+    margin-top: 2%;
+}
+#input-author {
+    margin-left: 15%;
+}
+#input-date {
+    margin-left: 15%;
+}
+#input-hashtags {
+    margin-left: 15%;
+}
+.container-outer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.container-inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 15%;
+}
+.post-with-icons{
+    float: left;
+    width: 50%;
+
+}
+.post-with-icons .post{
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-end;
+    align-items: center;
+    size: 3vw;
+    font-size: 1vw;
+}
+.post-with-icons .post .post-text{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    border: 3px outset #ff957b;
+    border-radius: 1vw;
+    width: 13vw;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1vw;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: #950001;
+    background-color: #ffb593;
+    margin-top: 5%;
+}
+.fa{
+    color: #950001;
+    /*padding-left: 15%;*/
+}
+.post-with-icons .icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: flex-start;
+    margin-right: 30%;
+    font-size: 1.2vw;
+    margin-top: 2%;
+}
+.post-with-icons button{
+    background-color: #ff7660;
+    display: inline-block;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5vw;
+    color: #7b0001;
+    border: 3px outset #ff9179;
+    border-radius: 1vw;
+}
+#load-more{
+    background-color: #ffc4b3;
+    height: 3vw;
+    width: 7vw;
+    text-align: center;
+    border: 3px outset #ffc4b3;
+    border-radius: 1vw;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    position: relative;
+    left: 90%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.3vw;
+    color: #7b0001;
+}
+.post-with-icons span{
+    font-size: 1vw;
+    color: #950001;
+}
+.post-photo{
+    margin: 3vw 1vw 1vw 1vw;
+    border-radius: 1vw;
+}

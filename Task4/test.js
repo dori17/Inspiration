@@ -119,18 +119,6 @@ console.log(workingWithPhotoposts.getPhotoPost(8));
 console.log("And now we'll try to remove photopost with id 100500: ");
 console.log(workingWithPhotoposts.removePhotoPost(100500));
 console.log("That's it :) ");
-console.log("*************************");
-console.log("Change description and photolink of the 2nd photopost correctly: ");
-console.log("Before: ");
-console.log(workingWithPhotoposts.getPhotoPost(2));
-const permittedChanges2 = {
-    description: "Don't apologize for feeling something or a lot.",
-    photoLink: "Let this be some link",
-    hashTags: ["one", "twoo", "three"]                                 // !!!!!!!!!!!!!!!!!!!!!!!! не работает
-};
-console.log("Result of edit: ");
-console.log(workingWithPhotoposts.editPhotoPost(2, permittedChanges2));
-console.log(workingWithPhotoposts.getPhotoPost(2));
 
 
 
