@@ -2,19 +2,12 @@
 const workingWithDOM = (function() {
 
     let posts = document.querySelector(".container-inner");
-    let user = "Darya Bondareva";
+    let user = "Kira Bondareva";
 
     function showUser(){
         let userField = document.getElementsByClassName("icons-container");
-        //userField.removeChild(userField.childNodes[0]);
-        let addPhoto = document.createElement("i");
-        addPhoto.className = "fa fa-camera-retro";
-        addPhoto.textContent = "";
-        userField[0].appendChild(addPhoto);
-        let name = document.createElement("i");
-        name.className = "fa fa-sign-out";
-        name.textContent = " " + user.toString();
-        userField[0].appendChild(name);
+        userField[0].innerHTML = "<i class=\"fa fa-camera-retro\"></i>" +
+            "\t<i class=\"fa fa-sign-out\"><span> " + user.toString() + " </span></i>";
     }
 
     function createPost(post){
@@ -49,15 +42,22 @@ const workingWithDOM = (function() {
         let likeButton = document.createElement("button");
         likeButton.setAttribute("type", "submit");
         likeButton.textContent = "Like it!";
+        for(let i = 0; i < post.likes.length; i++){
+            if(post.likes[i] === user){
+                likeButton.textContent = "You like it!";
+            }
+        }
         icons.appendChild(likeButton);
-        let editIcon = document.createElement("i");
-        editIcon.className = "fa fa-edit";
-        editIcon.textContent = "Edit";
-        icons.appendChild(editIcon);
-        let deleteIcon = document.createElement("i");
-        deleteIcon.className = "fa fa-times-circle";
-        deleteIcon.textContent = "Delete";
-        icons.appendChild(deleteIcon);
+        if(user === post.author){
+            let editIcon = document.createElement("i");
+            editIcon.className = "fa fa-edit";
+            editIcon.textContent = "Edit";
+            icons.appendChild(editIcon);
+            let deleteIcon = document.createElement("i");
+            deleteIcon.className = "fa fa-times-circle";
+            deleteIcon.textContent = "Delete";
+            icons.appendChild(deleteIcon);
+        }
         postWithIcons.appendChild(icons);
         postWithIcons.id = post.id;
         return postWithIcons;
@@ -105,12 +105,12 @@ const workingWithDOM = (function() {
 
 
     return{
-        showUser: showUser,
-        createPost: createPost,
-        showAll: showAll,
-        addPhotoPost: addPhotoPost,
-        editPhotoPost: editPhotoPost,
-        deletePhotoPost: deletePhotoPost
+        showUser,
+        createPost,
+        showAll,
+        addPhotoPost,
+        editPhotoPost,
+        deletePhotoPost
     }
 })();
 

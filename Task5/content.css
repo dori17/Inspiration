@@ -61,15 +61,16 @@ body{
     background-color: #ffb593;
     margin-top: 5%;
 }
-.fa{
+.post-with-icons .fa{
     color: #950001;
+    margin-left: 2%;
 }
 .post-with-icons .icons{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     justify-items: flex-start;
-    margin-right: 30%;
+    margin-right: 25%;
     font-size: 1.2vw;
     margin-top: 2%;
 }
@@ -81,11 +82,12 @@ body{
     color: #7b0001;
     border: 3px outset #ff9179;
     border-radius: 1vw;
+    margin-left: 2%;
 }
 #load-more{
     background-color: #ffc4b3;
     height: 3vw;
-    width: 7vw;
+    width: 10vw;
     text-align: center;
     border: 3px outset #ffc4b3;
     border-radius: 1vw;

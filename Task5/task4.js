@@ -41,7 +41,7 @@ const workingWithPhotoposts = (function() {
         {
             id: "5",
             description: "No one can ruin your day without your permission. Remember that.",
-            createdAt: new Date("2018-02-13T09:12:34"),
+            createdAt: new Date("2018-02-13T09:15:33"),
             author: "Kira Bondareva",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
             hashTags: ["motivation", "self-confidence", "wisdom"],
@@ -90,7 +90,7 @@ const workingWithPhotoposts = (function() {
             author: "Helen",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
             hashTags: ["wisdom", "psychology", "mental", "health"],
-            likes: ["Tatsiana", "Aleksei"]
+            likes: ["Tatsiana", "Kira Bondareva"]
         },
         {
             id: "11",
@@ -145,7 +145,7 @@ const workingWithPhotoposts = (function() {
             author: "Vladichek",
             photoLink: "http://kot-pes.com/wp-content/uploads/2016/08/image10-2-650x520.jpeg",
             hashTags: ["cute", "life", "relationship"],
-            likes: ["Vasya", "Petya", "Kolya"]
+            likes: ["Vasya", "Petya", "Kolya", "Kira Bondareva"]
         },
         {
             id: "17",
@@ -190,27 +190,27 @@ const workingWithPhotoposts = (function() {
     function getPhotoPosts(skip = 0, top = 10, filterConfig) {
         const array = [];
         photoPosts.sort(compareByDate);
-        if (filterConfig === undefined) {
+        if (!filterConfig) {
             for (let i = skip; i < top + skip; i++) {
                 array.push(photoPosts[i]);
             }
             return array;
         }
-        if(filterConfig.author !== undefined) {
+        if(filterConfig.author) {
             for (let i = 0; i < photoPosts.length; i++) {
                 if(photoPosts[i].author === filterConfig.author) {
                     array.push(photoPosts[i]);
                 }
             }
         }
-        if(filterConfig.createdAt !== undefined) {
+        if(filterConfig.createdAt) {
                 for (let i = 0; i < photoPosts.length; i++) {
                     if (datesEqual(photoPosts[i], filterConfig)) {
                         array.push(photoPosts[i]);
                     }
                 }
             }
-        if(filterConfig.hashTags !== undefined) {
+        if(filterConfig.hashTags) {
             for (let i = 0; i < photoPosts.length; i++) {
                 if (containsHashTag(photoPosts[i], filterConfig.hashTags)) {
                     array.push(photoPosts[i]);
@@ -218,9 +218,9 @@ const workingWithPhotoposts = (function() {
             }
         }
         for (let i = 0; i < array.length; i++) {
-            if((filterConfig.author!== undefined && array[i].author !== filterConfig.author) ||
-                (filterConfig.createdAt!==undefined &&!datesEqual(array[i], filterConfig)) ||
-                (filterConfig.hashTags!== undefined && !containsHashTag(array[i], filterConfig.hashTags))){
+            if((filterConfig.author && array[i].author !== filterConfig.author) ||
+                (filterConfig.createdAt &&!datesEqual(array[i], filterConfig)) ||
+                (filterConfig.hashTags && !containsHashTag(array[i], filterConfig.hashTags))){
                 array.splice(i, 1);
                 i--;
             }
@@ -237,29 +237,31 @@ const workingWithPhotoposts = (function() {
         if(skip !== 0) {
             return array.slice(skip, skip + top)
         }
-        else return array.slice(0, top);
+        return array.slice(0, top);
     }
 
     function getPhotoPost(idParam) {
         for(let i = 0; i < photoPosts.length; i++){
-            if (!photoPosts[i].id.localeCompare(idParam))
+            if (!photoPosts[i].id.localeCompare(idParam)){
                 return photoPosts[i];
+            }
         }
         return false;
     }
 
     function validatePhotoPost(postItself){
         for(let i=0; i<photoPosts.length; i++){
-            if (!photoPosts[i].id.localeCompare(postItself.id))
+            if (!photoPosts[i].id.localeCompare(postItself.id)){
                 return false;
+            }
         }
-        if (postItself.description.length > 200 || postItself.description === undefined || notString(postItself.description))
+        if (postItself.description.length > 200 || !postItself.description || notString(postItself.description))
             return false;
-        if (postItself.author === undefined || notString(postItself.author))
+        if (!postItself.author || notString(postItself.author))
             return false;
-        if (postItself.createdAt === undefined || !(postItself.createdAt instanceof Date))
+        if (!postItself.createdAt || !(postItself.createdAt instanceof Date))
             return false;
-        if (postItself.photoLink === undefined || notString(postItself.photoLink))
+        if (!postItself.photoLink || notString(postItself.photoLink))
             return false;
         if(postItself.hashTags.some(notString))
             return false;
@@ -267,33 +269,30 @@ const workingWithPhotoposts = (function() {
     }
 
     function addPhotoPost(newPost) {
-        if (validatePhotoPost(newPost) === false)
+        if (!validatePhotoPost(newPost))
             return false;
-        else {
-            photoPosts.push(newPost);
-            return true;
-        }
+        photoPosts.push(newPost);
+        return true;
     }
 
     function editPhotoPost(idParam, changes) {
         if(idExists(idParam) &&
-           changes.id === undefined &&
-           changes.createdAt === undefined &&
-           changes.author === undefined
-           ) {
-            if(!(changes.description === undefined)){
+           !changes.id &&
+           !changes.createdAt &&
+           !changes.author) {
+            if(changes.description){
                 if(changes.description.length < 200){
                     getPhotoPost(idParam).description = changes.description;
                 }
                 else return false;
             }
-            if(!(changes.photoLink === undefined)){
+            if(changes.photoLink){
                 if(notString(changes.photoLink)) {
                     return false;
                 }
                 getPhotoPost(idParam).photoLink = changes.photoLink;
             }
-            if(!(changes.hashTags === undefined)){
+            if(changes.hashTags){
                 if(changes.hashTags.some(notString)){
                     return false;
                 }
@@ -315,15 +314,17 @@ const workingWithPhotoposts = (function() {
     }
 
     function notString(s){
-        if(typeof s === "string")
+        if(typeof s === "string"){
             return false;
-        else return true;
+        }
+        return true;
     }
 
     function idExists(someId){
        for(let i = 0; i < photoPosts.length; i++){
-           if(!photoPosts[i].id.localeCompare(someId))
+           if(!photoPosts[i].id.localeCompare(someId)){
                return true;
+           }
        }
        return false;
     }
@@ -334,8 +335,9 @@ const workingWithPhotoposts = (function() {
 
     function containsHashTag(obj, hashTag) {
         for(let i = 0; i < obj.hashTags.length; i++){
-            if (obj.hashTags[i] === hashTag)
+            if (obj.hashTags[i] === hashTag){
                 return true;
+            }
         }
         return false;
     }
@@ -346,15 +348,15 @@ const workingWithPhotoposts = (function() {
            obj1.createdAt.getDate() === obj2.createdAt.getDate()){
              return true;
         }
-        else return false;
+        return false;
     }
 
     return {
-        getPhotoPosts:getPhotoPosts,
-        getPhotoPost: getPhotoPost,
-        validatePhotoPost: validatePhotoPost,
-        addPhotoPost: addPhotoPost,
-        editPhotoPost: editPhotoPost,
-        removePhotoPost: removePhotoPost
+        getPhotoPosts,
+        getPhotoPost,
+        validatePhotoPost,
+        addPhotoPost,
+        editPhotoPost,
+        removePhotoPost
     }
 })();

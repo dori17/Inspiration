@@ -16,15 +16,7 @@ img.logo{
     margin-right: 5%;
     align-items: center;
 }
-.flex-container.icons-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: 10%;
-    padding-right: 4%;
-}
-header.fa{
+.icons-container .fa{
     color: #950001;
 }
 span{
