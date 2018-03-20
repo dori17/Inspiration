@@ -18,3 +18,20 @@ footer img{
     height: 10%;
     width: 10%;
 }
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    footer span{
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 4vw;
+        text-align: center;
+    }
+    footer img{
+        height: 25%;
+        width: 25%;
+    }
+
+}

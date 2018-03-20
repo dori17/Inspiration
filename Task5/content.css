@@ -107,3 +107,51 @@ body{
     margin: 3vw 1vw 1vw 1vw;
     border-radius: 1vw;
 }
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .filters{
+        border: 1px solid #950001;
+        font-style: italic;
+        font-size: 4.3vw;
+        width: 50%;
+        position: relative;
+        margin-left: 25%;
+    }
+    .container-inner{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .post-with-icons{
+        width: 100%;
+    }
+    .post-with-icons .post {
+        flex-direction: column;
+        justify-items: flex-start;
+        margin-top: 7%;
+    }
+    .post-with-icons .post .post-text{
+        margin-top: 0;
+        font-size: 4vw;
+        width: 90%;
+    }
+    .post-with-icons .icons{
+        margin-right: 0;
+        flex-direction: column;
+    }
+    .post-with-icons span{
+        font-size: 4.5vw;
+    }
+    .post-with-icons button{
+        font-size: 5vw;
+        margin-left: 50%;
+    }
+    .post-with-icons .fa{
+        font-size: 6vw;
+    }
+    #load-more{
+        left: 0%;
+        margin-left: 35%;
+        height: 5%;
+        width: 30%;
+        font-size: 5vw;
+    }
+}

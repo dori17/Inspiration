@@ -6,8 +6,8 @@ const workingWithDOM = (function() {
 
     function showUser(){
         let userField = document.getElementsByClassName("icons-container");
-        userField[0].innerHTML = "<i class=\"fa fa-camera-retro\"></i>" +
-            "\t<i class=\"fa fa-sign-out\"><span> " + user.toString() + " </span></i>";
+        userField[0].innerHTML = "<i class=\"fa fa-camera-retro\"><span>"+ " " + user.toString() + "</span></i>" +
+            "\t<i class=\"fa fa-sign-out\"></i>";
     }
 
     function createPost(post){
