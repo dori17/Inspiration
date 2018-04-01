@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dori17/Inspiration/issues"
   },
-  "homepage": "https://github.com/dori17/Inspiration#readme"
+  "homepage": "https://github.com/dori17/Inspiration#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
