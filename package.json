@@ -1,22 +1,16 @@
 {
-  "name": "expractice",
+  "name": "task8",
   "version": "1.0.0",
-  "description": "task7",
-  "main": "app.js",
+  "main": "task8.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dori17/Inspiration.git"
-  },
-  "author": "Darya Bondareva",
+  "author": "Darya",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dori17/Inspiration/issues"
-  },
-  "homepage": "https://github.com/dori17/Inspiration#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
