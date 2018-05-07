@@ -1,0 +1,154 @@
+.sign-in-form, .like-denied-form, .sign-out-window, .delete-post-window, .no-posts-div{
+    position: relative;
+    z-index: 2;
+    height: 70%;
+    width: 50%;
+    margin: 5% 25%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3vw;
+    color: #950001;
+    background: #ffac91;
+    border: 1px solid #950001;
+    text-align: center;
+}
+.create-post{
+    position: relative;
+    height: 70%;
+    width: 50%;
+    margin: 5% 25%;
+    padding-bottom: 1%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3vw;
+    color: #950001;
+    background: #ffac91;
+    border: 1px solid #950001;
+    text-align: center;
+}
+.create-post-form{
+    margin-bottom: 5%;
+}
+.create-post-form p{
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+.sign-in-inputs{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 30%;
+    margin-bottom: 5%;
+}
+#login-input, #password-input, .create-post-text{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2vw;
+}
+.sign-in-buttons, .wrong-user-buttons, .like-denied-buttons, .sign-out-buttons, .delete-post-buttons, .create-post-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 12%;
+    margin-bottom: 5%;
+}
+.sign-in-buttons button, .sign-out-buttons button, .delete-post-buttons button, .create-post-buttons button{
+    height: 10%;
+    width: 15%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2vw;
+    color: #950001;
+}
+.no-posts-div button{
+    height: 15%;
+    width: 20%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3vw;
+    color: #950001;
+    margin-bottom: 3%;
+}
+.wrong-user-form{
+    height: 70%;
+    width: 50%;
+    margin: 5% 25%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3vw;
+    color: #950001;
+    background: #ffac91;
+    border: 1px solid #950001;
+    text-align: center;
+}
+.wrong-user-buttons button{
+    height: 10%;
+    width: 25%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2vw;
+    color: #950001;
+}
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .sign-in-form, .like-denied-form, .sign-out-window, .delete-post-window, .no-posts-div{
+        width: 100%;
+        margin: 3% 1%;
+        font-size: 6vw;
+        border-radius: 4%;
+    }
+    .sign-in-inputs{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        margin-left: 30%;
+        margin-bottom: 5%;
+    }
+    #login-input, #password-input, .create-post-text{
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 6vw;
+    }
+    .sign-in-buttons, .wrong-user-buttons, .like-denied-buttons, .sign-out-buttons, .delete-post-buttons, .create-post-buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 5%;
+    }
+    .sign-in-buttons button, .sign-out-buttons button, .like-denied-buttons button, .delete-post-buttons button, .create-post-buttons button{
+        width: 30%;
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 5vw;
+        color: #950001;
+    }
+    .create-post{
+        position: relative;
+        height: 400px;
+        width: 100%;
+        margin: 3% 1%;
+        padding-bottom: 1%;
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 7vw;
+        color: #950001;
+        background: #ffac91;
+        border: 1px solid #950001;
+        border-radius: 4%;
+        text-align: center;
+    }
+    .create-post-form{
+        margin-bottom: 5%;
+    }
+    .create-post-form p{
+        margin-top: 3%;
+        margin-bottom: 2%;
+    }
+    .photo-area{
+        margin-bottom: 5%;
+    }
+    .no-posts-div button{
+        font-size: 6vw;
+    }
+    .wrong-user-form{
+        width: 98%;
+        margin: 3% 1%;
+        font-size: 6vw;
+        border-radius: 4%;
+    }
+    .wrong-user-buttons button{
+        width: 35%;
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 5vw;
+        color: #950001;
+    }
+}

@@ -1,0 +1,226 @@
+body{
+    background: #ffe6cf;
+}
+.filters{
+    background-color: #ffb593;
+    border: 1px solid #950001;
+    border-radius: 1vw;
+    width: 11%;
+    font-style: italic;
+    color: #950001;
+    font-size: 1.1vw;
+    position: fixed;
+    margin-top: 2%;
+}
+.filters button{
+    height: 5%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-left: 31%;
+    background-color: #ff7660;
+    border: 3px outset #ff9179;
+    border-radius: 1vw;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.3vw;
+    color: #950001;
+}
+#input-author {
+    margin-left: 15%;
+}
+#input-date {
+    margin-left: 15%;
+}
+#input-hashtag {
+    margin-left: 15%;
+}
+.container-outer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 1;
+}
+.container-inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 15%;
+}
+.post-with-icons{
+    float: left;
+    width: 50%;
+    margin-bottom: 3%;
+}
+.post-with-icons .post{
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-end;
+    align-items: center;
+    size: 3vw;
+    font-size: 1vw;
+}
+.post-with-icons .post .post-text{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    border: 3px outset #ff957b;
+    border-radius: 1vw;
+    width: 13vw;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1vw;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: #950001;
+    background-color: #ffb593;
+    margin-top: 5%;
+}
+.post-with-icons .fa{
+    color: #950001;
+    margin-left: 2%;
+}
+.post-with-icons .icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    justify-items: flex-start;
+    margin-right: 25%;
+    font-size: 1.2vw;
+    margin-top: 2%;
+}
+.post-with-icons button{
+    background-color: #ff7660;
+    display: inline-block;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5vw;
+    color: #7b0001;
+    border: 3px outset #ff9179;
+    border-radius: 1vw;
+    margin-left: 2%;
+}
+#load-more{
+    background-color: #ffc4b3;
+    height: 3vw;
+    width: 10vw;
+    text-align: center;
+    border: 3px outset #ffc4b3;
+    border-radius: 1vw;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    position: relative;
+    left: 90%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.3vw;
+    color: #7b0001;
+}
+.post-with-icons span{
+    font-size: 1vw;
+    color: #950001;
+}
+.post-photo{
+    margin: 3vw 1vw 1vw 1vw;
+    border-radius: 1vw;
+}
+.like-denied-buttons button{
+    height: 10%;
+    width: 25%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2vw;
+    color: #950001;
+}
+.test{
+    display: none;
+    position: relative;
+    z-index: 3;
+    height: 50%;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 10%;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3vw;
+    color: #950001;
+    background: #ff7660;
+    border: 1px solid #950001;
+}
+.test .fa{
+    font-size: 5vw;
+    position: center;
+    color: #800001;
+}
+.bground{
+    display:none;
+    position:fixed;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1;
+    background: darkgray;
+    opacity: 0.3;
+}
+.confirm-delete-buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.confirm-delete-buttons{
+    height: 5vw;
+    width: 7vw;
+    margin-bottom: 5%;
+    border: 3px outset #ff9c7b;
+    border-radius: 1vw;
+    background-color: #ff9c7b;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3vw;
+    color: #950001;
+}
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .filters{
+        border: 1px solid #950001;
+        font-style: italic;
+        font-size: 4.5vw;
+        width: 50%;
+        position: relative;
+        margin-left: 25%;
+    }
+    .filters button{
+        font-size: 5vw;
+    }
+    .container-inner{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .post-with-icons{
+        width: 100%;
+    }
+    .post-with-icons .post {
+        flex-direction: column;
+        justify-items: flex-start;
+        margin-top: 7%;
+    }
+    .post-with-icons .post .post-text{
+        margin-top: 0;
+        font-size: 4.5vw;
+        width: 90%;
+    }
+    .post-with-icons .icons{
+        margin-right: 0;
+        flex-direction: column;
+    }
+    .post-with-icons span{
+        font-size: 4.5vw;
+    }
+    .post-with-icons button{
+        font-size: 5vw;
+        margin-left: 50%;
+    }
+    .post-with-icons .fa{
+        font-size: 6vw;
+    }
+    #load-more{
+        left: 0%;
+        margin-left: 35%;
+        height: 5%;
+        width: 30%;
+        font-size: 5vw;
+    }
+}
